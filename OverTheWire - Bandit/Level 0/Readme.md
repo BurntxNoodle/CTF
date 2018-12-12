@@ -37,7 +37,13 @@ Combining the two, we get the solution:
 ```
 BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit0
 ```
-You may be asked ```Are you sure you want to continue connecting``` Just type ```yes```
+You may be asked ```Are you sure you want to continue connecting?``` Just type ```yes```
 
 Afterwards, we will be prompted for the password, and we know from the challenge description the password
 is simply ```bandit0``` typing that in gets us in!
+
+That's it for this challenge! Afterall, the goal of this challenge was to get us familiarized how to connect using 
+ssh and to get us logged in into the game.
+
+To proceed to the next challenge, stay on the ssh, and click on the ```Level 0 -> 1``` on the left hand side
+of the website.
