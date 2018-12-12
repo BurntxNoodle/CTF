@@ -46,4 +46,4 @@ That's it for this challenge! Afterall, the goal of this challenge was to get us
 ssh and to get us logged in into the game.
 
 To proceed to the next challenge, stay on the ssh, and click on the ```Level 0 -> 1``` on the left hand side
-of the website.
+of the OTW bandit website.
