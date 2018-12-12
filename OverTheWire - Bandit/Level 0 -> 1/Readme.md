@@ -14,7 +14,7 @@ file
 du
 find
 ```
-### It's recommended to google or read man pages these commands to view their whole argument list, syntax, etc.
+### It's recommended to google or read man pages for these commands to view their whole argument list, syntax, etc.
 
 Here is a basic summary of what each of the commands do:
 
