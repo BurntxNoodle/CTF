@@ -14,7 +14,7 @@ file
 du
 find
 ```
-# It's recommended to google or read man pages these commands to view their whole argument list, syntax, etc.
+### It's recommended to google or read man pages these commands to view their whole argument list, syntax, etc.
 
 Here is a basic summary of what each of the commands do:
 
@@ -36,7 +36,7 @@ man page: ```Summarize disk usage of each FILE, recursively for directories. ```
 ```find``` will search for files in a directory hierarchy. We will see in later challenges we can add certain
 parameters to add specific restrictions.
 
-### Solution:
+# Solution:
 
 First we will ```ls -la```. To view all the contents of the file:
 
