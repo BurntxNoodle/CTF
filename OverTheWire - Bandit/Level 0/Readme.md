@@ -37,7 +37,3 @@ Combining the two, we get the solution:
 ```
 BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit0
 ```
-
-From the challenge description, we know the password is ```bandit0```
-
-Typing ```bandit0``` when prompted for the password gets you in.
