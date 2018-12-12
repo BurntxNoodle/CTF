@@ -9,4 +9,4 @@ Link to the start of the game: http://overthewire.org/wargames/bandit/
 
 Each of the writeup will consist of some explanation of what will be going on in
 the challenge, if one wants to easily see the solution, they can do so by scrolling down
-until seeing ### Solution:
+until seeing ###Solution:
