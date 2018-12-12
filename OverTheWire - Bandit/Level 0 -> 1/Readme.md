@@ -31,7 +31,7 @@ for a txt file.
 ```file``` is used for investigating the file type.
 
 ```du``` stands for disk usage. Though I haven't had to use this command in this wargame yet. According to the 
-man page: ```Summarize disk usage of each FILE, recursively for directories. ``` 
+man page du will: ```summarize disk usage of each FILE, recursively for directories. ``` 
 
 ```find``` will search for files in a directory hierarchy. We will see in later challenges we can add certain
 parameters to add specific restrictions.
