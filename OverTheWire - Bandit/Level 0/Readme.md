@@ -4,7 +4,7 @@ The challenge reads:
 
 ![screenshot from 2018-12-12 03-34-00](https://user-images.githubusercontent.com/41026969/49857122-b90cba00-fdbf-11e8-8285-f5c19c00ee6c.png)
 
-To secure shell (ssh) into bandit.labs.overthewire.org we:
+To secure shell (ssh) into bandit.labs.overthewire.org we would normally:
 
 ssh bandit.labs.overthewire.org 
 
@@ -18,7 +18,20 @@ ssh connects and logs into the specified hostname (with optional user name). The
 his/her identity to the remote machine using one of several methods depending on 
 the protocol version used... 
 ```
-  
+
+To specifiy the user (from the ssh manpage):
+```
+-l login_name
+Specifies the user to log in as on the remote machine.
+```
+
+To specificy the port (from the ssh manpage):
+```
+-l login_name
+Specifies the user to log in as on the remote machine. 
+```
+Combining the two, we get the solution:
+
 ### Solution:
 
 ```
