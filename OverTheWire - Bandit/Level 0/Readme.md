@@ -37,3 +37,7 @@ Combining the two, we get the solution:
 ```
 BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit0
 ```
+You may be asked ```Are you sure you want to continue connecting``` Just type ```yes```
+
+Afterwards, we will be prompted for the password, and we know from the challenge description the password
+is simply ```bandit0``` typing that in gets us in!
