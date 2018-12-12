@@ -32,7 +32,7 @@ Specifies the user to log in as on the remote machine.
 ```
 Combining the two, we get the solution:
 
-### Solution:
+# Solution:
 
 ```
 BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit0
