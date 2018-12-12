@@ -7,6 +7,11 @@ If you are learning for the first time, give each level a shot and when you run 
 
 Link to the start of the game: http://overthewire.org/wargames/bandit/
 
-Each of the writeup will consist of some explanation of what will be going on in
-the challenge, if one wants to easily see the solution, they can do so by scrolling down
-until seeing ###Solution:
+Each of the writeup will consist of some explanation of what will be going on in the challenge, if one wants 
+to easily see the solution, they can do so by scrolling down.
+until seeing:
+
+### Solution:
+
+The solution part will contain no explanation and will be a straight answer. If you're learning for the
+first time it's not recommended to scroll straight down to the solution as you will not learn as much.
