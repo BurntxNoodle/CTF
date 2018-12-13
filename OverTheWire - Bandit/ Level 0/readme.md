@@ -27,8 +27,8 @@ Specifies the user to log in as on the remote machine.
 
 To specificy the port (from the ssh manpage):
 ```
--l login_name
-Specifies the user to log in as on the remote machine. 
+-p port#
+Specifies the port to log into
 ```
 Combining the two, we get the solution:
 
