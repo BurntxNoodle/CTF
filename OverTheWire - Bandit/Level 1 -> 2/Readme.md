@@ -8,6 +8,8 @@ Reading the challenge:
 
 ![screenshot from 2018-12-14 00-15-06](https://user-images.githubusercontent.com/41026969/49984282-6b19c280-ff35-11e8-84ce-70be47325c2a.png)
 
+The helpful commands list is the same from Level 0 -> 1. You can refer to it [here](https://github.com/BurntxNoodle/CTF/tree/master/OverTheWire%20-%20Bandit/Level%200%20-%3E%201) or simply google them.
+
 To connect to bandit level 1:
 ```
 BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit1
