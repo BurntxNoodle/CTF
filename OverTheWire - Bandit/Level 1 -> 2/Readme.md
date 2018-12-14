@@ -15,4 +15,11 @@ BurntxN00dle@ubuntu:~$ ssh bandit.labs.overthewire.org -p 2220 -l bandit1
 
 Googling on how to cat a dashed filename, we discover that there a couple work arrounds.
 
-# The Solution
+# Solution
+
+After we connect into the first level of the wargame, we do a quick ```ls -la``` to view all files:
+```
+bandit1@bandit:~$ ls -la
+```
+
+We see that there is a filename called ```-```
