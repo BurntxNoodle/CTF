@@ -23,3 +23,20 @@ bandit1@bandit:~$ ls -la
 ```
 
 We see that there is a filename called ```-```
+
+One of the workarounds is that before the ```-``` in the filename when we cat it, we add ```./``` before. Resulting in:
+```
+bandit1@bandit:~$ cat ./- 
+```
+
+This will spit out the password for level 2: ```CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9```
+
+A different workaround is that we can go into the directory in which the file is. We know that we are in level 1 and
+we can look through and access files from the home directory. It is worth noting that after ```/home``` I simply tabbed and saw
+all the bandit levels appear but we only have access to the level we are currently on. Here's how the command looks like:
+
+```
+bandit1@bandit:~$ cat /home/bandit1/-
+```
+
+This also yields us the same password: ```CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9```
