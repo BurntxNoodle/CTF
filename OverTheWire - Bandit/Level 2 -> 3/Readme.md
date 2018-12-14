@@ -35,7 +35,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 ### Second way
 
-So using the tabs auto completed and pretty much revealed the second way of writing out the file name with spaces. We can 
+So using the tab button auto completed and pretty much revealed the second way of writing out the file name with spaces. We can 
 insert a ```\``` before every space in the file name:
 
 ```
