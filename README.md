@@ -9,7 +9,7 @@ Some helpful resources:
 
 [CTF101](https://ctf101.org/)
 
-### still working in progress
+### still a work in progress
 
 Thanks,
 
