@@ -7,7 +7,7 @@ Reading the challenge:
 
 ![3 to 4](https://user-images.githubusercontent.com/41026969/50001204-1f354080-ff6a-11e8-978a-917958241c8e.png)
 
-The recommened commands are the same as the past few. You can read up on them [here] (https://github.com/BurntxNoodle/CTF/tree/master/OverTheWire%20-%20Bandit/Level%200%20-%3E%201) or google/read the man pages.
+The recommened commands are the same as the past few. You can read up on them [here](https://github.com/BurntxNoodle/CTF/tree/master/OverTheWire%20-%20Bandit/Level%200%20-%3E%201) or google/read the man pages.
 
 Reading up on hidden file names and reading the ```ls``` man page, we know we can add on ```-a``` to list all the 
 files, including hidden files. *this shouldn't be new to us as I've been doing ```ls -la``` for the past challenegs*
