@@ -20,7 +20,7 @@ Changing the directories and using cat to read the file name should be the same:
 
 Doing a quick ```ls -la``` reveals that there is a hidden file called ```.inhere``` 
 
-Doing ```file .inhere``` reveals that it is a directory.
+Doing a ```file``` check reveals that it is a directory.
 
 We change directory into it as normal (we do not need to include the ```.```)
 ```
