@@ -15,5 +15,5 @@ until seeing:
 
 ### Solution:
 
-The solution part will contain no explanation and will be a straight answer. If you're learning for the
+The solution part will contain little explanation and will be a straight answer. If you're learning for the
 first time it's not recommended to scroll straight down to the solution as you will not learn as much.
