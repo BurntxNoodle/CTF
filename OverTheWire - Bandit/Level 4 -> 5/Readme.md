@@ -35,6 +35,7 @@ bandit4@bandit:~/inhere$ file ./-file*
 ```
 
 This will return:
+
 ![asterisk](https://user-images.githubusercontent.com/41026969/50039498-9bc72e00-0001-11e9-8bad-10fd2f63fd56.png)
 
 
