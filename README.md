@@ -11,6 +11,4 @@ Some helpful resources:
 
 ### still a work in progress
 
-Thanks,
-
-BurntxNoodle (CS, UCF 2021)
+\- BurntxNoodle (CS, UCF 2021)
