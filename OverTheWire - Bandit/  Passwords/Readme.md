@@ -1,5 +1,11 @@
 # OverTheWire Bandit Passwords
 
+```
+Host: bandit.labs.overthewire.org  
+Port: 2220  
+User: Level you want to access
+```
+
 ### In progress
 
 Level 0 -> 1: ```boJ9jbbUNNfktd78OOpsqOltutMc3MY1```
