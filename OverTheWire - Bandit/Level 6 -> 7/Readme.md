@@ -41,4 +41,9 @@ Using ```cat```:
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 ```
 
-This will give us the password: ```HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs```
+This will give us the password: ```HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs```  
+
+Note: we can filter out those search results from ```Permission denied``` by adding on ```2>/dev/null``` at the end of our
+find command. This will remove stderr (standard error) outputs as seen here:
+
+![filter](https://user-images.githubusercontent.com/41026969/50058259-af7aad80-0143-11e9-996e-a385e362364f.png)
