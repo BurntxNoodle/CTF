@@ -3,7 +3,7 @@
 ```
 Host: bandit.labs.overthewire.org  
 Port: 2220  
-User: Level you want to access
+User: banditx (where x is the level you want to access)
 ```
 
 ### In progress
