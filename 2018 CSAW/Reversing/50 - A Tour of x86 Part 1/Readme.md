@@ -3,5 +3,7 @@ The challenge reads:
 
 You can find the files given in the challenge above the Readme.  
 
-The nc asks the user for several answers from the questions given in the ```stage-1.asm``` file. Users can either use ```cat```  to read the file or open with a text editor (I personally prefer sublime text).
+The ```nc``` will prompt the user and ask several questions regarding the ```stage-1.asm``` file. Users can either use ```cat```  to read the file or open with a text editor (I personally prefer sublime text). Upon entering the question correct, it will lead to the next question until the end. When all the answers were answered correctly, the flag will be given.
+
+So throughout the ```stage-1.asm``` file there are examples of assembly instructions. Most of which have to do with memory addresses. Reading it, there are several parts with an arrow and question number, ex: ```<- Question 1```. This will denote what the question refers to when asked from the ```nc``` command (not open anymore).
 
