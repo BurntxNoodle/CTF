@@ -14,7 +14,7 @@ Note: All answers will start with ```0x``` followed by the adress asked.
 Upon doing the ```nc``` command, the first question will ask: ```what is the value of dh after line 129 executes (One byte)``` 
 
 When I first did the challenge, I was held back (time wise) on the formatting of the answers: specifically how many bytes are
-represented per hex digit. According to the [hexidemical wiki](https://en.wikipedia.org/wiki/Hexadecimal) ```Each hexadecimal digit represents four binary digits, also known as a nibble, which is half a byte.``` So since each hex digit is half a byte, we'll have to input two digits after ```0x``` (according to the question, the answer is one byte).
+represented per hex digit. According to the [hexademical wiki](https://en.wikipedia.org/wiki/Hexadecimal) ```Each hexadecimal digit represents four binary digits, also known as a nibble, which is half a byte.``` So since each hex digit is half a byte, we'll have to input two digits after ```0x``` (according to the question, the answer is one byte).
 
 Reading line 129 in the ```stage-1.asm```, the assembly line is ```xor dh, dh```. This means we'll do an exclusive-or (also denoted as XOR) comparison with the higher half of register ```d``` (this is what the ```h``` means in ```dh``` - that we're referring to the higher half of d's address).
 
