@@ -1,5 +1,5 @@
-# This folder will contain all the Reverse Engineering Writeups
+### This folder will contain my reverse engineering writeups
 
-It is ordered by the amount of points worth. So the format looks like:
+It is ordered by the amount of points worth, from least to greatest. So the format looks like:
 
 Amount of Points Worth - Name of Challenge
