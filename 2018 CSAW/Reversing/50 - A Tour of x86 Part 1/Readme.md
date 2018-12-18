@@ -24,4 +24,28 @@ So since we are XOR'ing the same address, it doens't matter what the actual addr
 
 And since the question specifies that we will have the answer in one byte (and we know each hex digit is half a byte), the resulting answer is: ```0x00```
 
-### Question 2
+### Question 2  
+Upon answering the first question correctly, the second question will be prompted: ```What is the value of gs after line 145 executes? (one byte)```
+
+Line 145 reads: ```mov gs, dx```
+
+So there are a couple hints regarding how to solve this question.
+
+So the first way is that looking a bit above: specifically on line 134, it says ```cmp dx, 0```. ```cmp``` stands for compare
+and it will compare the two numerical data fields. Depending on the result, the next line will execute or not. In this case, the 
+next line reads: ```jne .death```. First, ```jne``` means "jump not equal." Meaning if the comparison is not equal, it will jump to the address/function named ```.death```. Assuming from the name, this will execute the program. Thus, putting together:
+
+```
+cmp dx, 0
+jne .death
+```
+
+Translated into English: We compare register ```dx``` with 0, and we will jump, if they're not equal, to the function ```.death```
+
+So if the program continues and doesn't die, we'll get to the line in question 2 (145) which reads: ```mov gs, dx```. 
+```mov``` stands for "move." It basically means we'll copy the address stored (in this case) ```dx``` to ```gs```. Since we  
+know dx is 0 (if it wasn't 0, the program would die/exit from the assembly code above), we're moving the address stored in
+```dx``` (all 0's) into ```gs```. So ```gs``` will have all 0s.
+
+Since it is a one byte answer format, we'll write out two hex digits (each hex digit equals one half of a byte as explained
+above). Thus the answer for question 2 is: ```0x00```.
