@@ -71,3 +71,29 @@ If that doesn't convince you, we can also see that on line 107 that the program 
 Since the answer format needs to be in two bytes, the answer is: ```0x0000```
 
 ### Question 4
+This question/section revolves around converting to hex, representing as bytes, and learning the higher/lower bits of a register. In
+this case we'll look at the lower, and higher bits of register ```a```. It goes into some detail starting at line 77. We assume
+that the registers in this file are presenting 16 bit registers. To explain it myself: register ```a``` can look like this:
+```
+00000000  00000000
+There are a total of sixteen 0's, split into 2 halves, both sides have eight 0's
+```
+(I say "can look like this" becase not all of the time will they all equal 0). Anyway, so each '0' represents a bit. And there are
+8 bits in a byte. So to put in graphically:
+```
+00000000  00000000
+^------^  ^------^
+1st Byte  2nd Byte
+```  
+In addition the ```a``` register can be referred to as ```al```, ```ah```, or ```ax``` meaning a lower, a higher, and an all.
+This is how it looks visually:
+```
+00000000    00000000
+^------^    ^------^
+ah(higher)  al(lower)
+
+ALL of them combined (all 16 bits) is referred to ax
+```
+Now we can get into the question, question #4 says: ```What is the value of ax after line 169 executes? (two bytes)```  
+
+
