@@ -49,3 +49,17 @@ know dx is 0 (if it wasn't 0, the program would die/exit from the assembly code 
 
 Since it is a one byte answer format, we'll write out two hex digits (each hex digit equals one half of a byte as explained
 above). Thus the answer for question 2 is: ```0x00```.
+
+A second hint is the comment on the side of the x86 assembly code block (lines 142 - 146). It reads ```Oh yea so this since
+the other registers are already 0, I'm just going to use them to help me clear these registers out.``` From that comment
+you can assume that by ```clear these registeres out``` the author means he'll set everything to 0. Thus yielding the answer
+of: ```0x00```.
+
+### Question 3
+When answering the second question correctly: ```What is the value of si after line 151 executes? (two bytes)```
+
+So this question requires a tad bit of reversing. So first line 151 says: ```mov si, sp ;```. And the question is asking
+what is the value of ```si```. And to know what value was moved into ```si``` we need to find the value of ```sp```. 
+Traversing up the code to investigate the value of ```sp``` we get to line 149 that says ```mov sp, cx```. So now we know
+that the value of cx was moved into sp, and the value moved into sp was moved into si. So now we need to figure out what
+```cx``` is equal to. 
