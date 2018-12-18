@@ -61,5 +61,13 @@ When answering the second question correctly: ```What is the value of si after l
 So this question requires a tad bit of reversing. So first line 151 says: ```mov si, sp ;```. And the question is asking
 what is the value of ```si```. And to know what value was moved into ```si``` we need to find the value of ```sp```. 
 Traversing up the code to investigate the value of ```sp``` we get to line 149 that says ```mov sp, cx```. So now we know
-that the value of cx was moved into sp, and the value moved into sp was moved into si. So now we need to figure out what
-```cx``` is equal to. 
+that the value of ```cx``` was moved into ```sp```, and the value moved into ```sp``` was moved into ```si```. So now we need to 
+figure out what ```cx``` is equal to. And we know that whole code block from line 142-146 is just setting all the reigsters to 0
+because of the comment on the side: ```Oh yea so this since the other registers are already 0, I'm just going to use them to help me
+clear these registers out.``` And in those registers is ```cx``` so it's safe to assume that ```cx``` is simply equal to 0. 
+
+If that doesn't convince you, we can also see that on line 107 that the program moves 0 into ```cx```. It reads: ```mov cx, 0```.
+
+Since the answer format needs to be in two bytes, the answer is: ```0x0000```
+
+### Question 4
