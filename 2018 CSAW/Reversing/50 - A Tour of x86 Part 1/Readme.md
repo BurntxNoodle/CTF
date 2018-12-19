@@ -96,7 +96,7 @@ This is how it looks visually:
 ^------^    ^------^
 ah(higher)  al(lower)
 
-ALL of them combined (all 16 bits) is referred to ax
+ALL of them combined (all 16 bits) is referred to as ax
 ```
 Now we can get into the question, question #4 says: ```What is the value of ax after line 169 executes? (two bytes)```  
 
