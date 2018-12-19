@@ -137,7 +137,7 @@ So how the function ```print_string``` works is that it takes in a string argume
 
 So essentially, in the first loop, the value of ```[si]``` is the first letter (of the string that was passed into the function). And since we see the command: ```mov al, [si]``` we know that the first letter is passed into ```al```.
 
-Looking above, we see the string ```acOS...``` (didn't list it all as it doesn't really matter).
+Looking above, we see the string ```acOS...``` (didn't list it all as it doesn't really matter) is first passed into the function.
 
 The first char of the string is ```a``` and thus it's passed into ```al``` in the first loop. Remember: the question specifies what's the value of ```ax``` ```the first time```. So in the first loop, 'a' is passed into ```al``` and the hex value of 'a' is ```0x61```. Thus ```al``` = ```0x61```. On line 199, it always sets the value of ```ah``` to ```0x0e``` (the line specifically says: ``` mov ah, 0x0e ```).  Thus combining the two halves we get the final answer!
 
