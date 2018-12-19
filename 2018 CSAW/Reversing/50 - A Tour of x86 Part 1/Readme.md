@@ -120,6 +120,36 @@ NOTE: If you look up the hex values online, be sure to get the capitalization co
 than ```t```.
 
 ### Question 5 (the last!!)
+The last question asks us: ```What is the value of ax after line 199 executes for the first time? (two bytes)```
+
+Line 199 says: ```mov ah, 0x0e ```. This is line is the exact same from the previous question. So now we know that the
+higher half is ```0x0e``` and we just need to find what the lower half is, thus we scan the x86 assembly around for hints.
+
+We see that we are inside a function that serves as a loop - we notice that toward the end of the code, there is a line
+that says ```jmp .print_char_loop```. Searching through the code (I did CNTRL + F on sublime text) we see that we are 
+redirected to the beginning of the funcion. And we also see that before we jump back to the top of the function, a value
+is incremented. The function ```.print_char_loop``` is part of the ```print_string``` function.
+
+This part of ```stage-1.asm``` is kinda hard to read (the whitespace/spacing came out weird) and it was hard to understand
+the comments given (in my opinion). I'll do my best to explain it better.
+
+So how the function ```print_string``` works is that it takes in a string argument. This string argument is then passed into the
+```.print_char_loop``` where as the name suggests, it will print each char, one by one. Inside the char function, on line 197 it says ```mov al, [si]``` which means on the LOWER part of register ```a``` it will equal the first char that was passed into the function. At the end of the ```.print_char_loop``` the value of ```[si]``` is incremented so that the next char will print out. The backets mean "the adress of." It's kind of like C, for example, if you want to print a char in C, it'd look something like: ```print(string[1])```. 
+
+So essentially, in the first loop, the value of ```[si]``` is the first letter (of the string that was passed into the function). And since we see the command: ```mov al, [si]``` we know that the first letter is passed into ```al```.
+
+Looking above, we see the string ```acOS...``` (didn't list it all as it doesn't really matter).
+
+The first char of the string is ```a``` and thus it's passed into ```al``` in the first loop. Remember: the question specifies what's the value of ```ax``` ```the first time```. So in the first loop, 'a' is passed into ```al``` and the hex value of 'a' is ```0x61```. Thus ```al``` = ```0x61```. On line 199, it always sets the value of ```ah``` to ```0x0e``` (the line specifically says: ``` mov ah, 0x0e ```).  Thus combining the two halves we get the final answer!
+
+```ax``` = ```0x0e61```
+
+# The flag
+Upon answering the last question correctly, we get the flag!
+
+flag: ```flag{rev_up_y0ur_3ng1nes_reeeeeeeeeeeeecruit5!}```
+
+
 
 
 
