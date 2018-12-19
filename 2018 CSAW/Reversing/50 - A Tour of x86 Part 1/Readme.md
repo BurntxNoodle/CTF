@@ -126,9 +126,8 @@ Line 199 says: ```mov ah, 0x0e ```. This is line is the exact same from the prev
 higher half is ```0x0e``` and we just need to find what the lower half is, thus we scan the x86 assembly around for hints.
 
 We see that we are inside a function that serves as a loop - we notice that toward the end of the code, there is a line
-that says ```jmp .print_char_loop```. Searching through the code (I did CNTRL + F on sublime text) we see that we are 
-redirected to the beginning of the funcion. And we also see that before we jump back to the top of the function, a value
-is incremented. The function ```.print_char_loop``` is part of the ```print_string``` function.
+that says ```jmp .print_char_loop```, searching through the code (I did CNTRL + F on sublime text) we see that we are 
+redirected to the beginning of the funcion that we are in! And we also see that before we jump back to the top of the function, a value is incremented. The function ```.print_char_loop``` is part of the ```print_string``` function.
 
 This part of ```stage-1.asm``` is kinda hard to read (the whitespace/spacing came out weird) and it was hard to understand
 the comments given (in my opinion). I'll do my best to explain it better.
@@ -148,8 +147,4 @@ The first char of the string is ```a``` and thus it's passed into ```al``` in th
 Upon answering the last question correctly, we get the flag!
 
 flag: ```flag{rev_up_y0ur_3ng1nes_reeeeeeeeeeeeecruit5!}```
-
-
-
-
 
