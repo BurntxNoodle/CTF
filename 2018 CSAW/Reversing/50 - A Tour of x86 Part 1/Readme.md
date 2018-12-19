@@ -3,6 +3,9 @@
 The challenge reads:  
 ![tour of x86 part 1](https://user-images.githubusercontent.com/41026969/50127555-a7079d00-023f-11e9-922f-d5880475e4fe.png)
 
+Note: All answers will start with ```0x``` followed by the adress asked. The number of bytes that are required to input were told for  
+each question.
+
 You can find the files given in the challenge above the Readme.  
 
 The ```nc``` will prompt the user and ask several questions regarding the ```stage-1.asm``` file. Users can either use ```cat```  to read the file or open with a text editor (I personally prefer sublime text). Upon entering the question correct, it will lead to the next question until the end. When all the answers were answered correctly, the flag will be given.
@@ -10,13 +13,12 @@ The ```nc``` will prompt the user and ask several questions regarding the ```sta
 So throughout the ```stage-1.asm``` file there are examples of assembly instructions. Most of which have to do with memory addresses. Reading it, there are several parts with an arrow and question number, ex: ```<- Question 1```. This will denote what
 the question refers to when asked from the ```nc``` command (not open anymore).
 
-Note: All answers will start with ```0x``` followed by the adress asked.
-
 ### Question 1
 Upon doing the ```nc``` command, the first question will ask: ```what is the value of dh after line 129 executes (One byte)``` 
 
 When I first did the challenge, I was held back (time wise) on the formatting of the answers: specifically how many bytes are
-represented per hex digit. According to the [hexademical wiki](https://en.wikipedia.org/wiki/Hexadecimal) ```Each hexadecimal digit represents four binary digits, also known as a nibble, which is half a byte.``` So since each hex digit is half a byte, we'll have to input two digits after ```0x``` (according to the question, the answer is one byte).
+represented per hex digit. According to the [hexademical wiki](https://en.wikipedia.org/wiki/Hexadecimal) ```Each hexadecimal digit represents four binary digits, also known as a nibble, which is half a byte.``` So since each hex digit is half a byte, we'll have to input two digits after ```0x``` (according to the question, the answer is one byte). ```0x``` is just a way of saying the next
+digits are hexadecimal values and does not count toward the byte count.
 
 Reading line 129 in the ```stage-1.asm```, the assembly line is ```xor dh, dh```. This means we'll do an exclusive-or (also denoted as XOR) comparison with the higher half of register ```d``` (this is what the ```h``` means in ```dh``` - that we're referring to the higher half of d's address).
 
@@ -97,5 +99,27 @@ ah(higher)  al(lower)
 ALL of them combined (all 16 bits) is referred to ax
 ```
 Now we can get into the question, question #4 says: ```What is the value of ax after line 169 executes? (two bytes)```  
+
+Line 169 says: ```mov ah, 0x0e ```
+
+So we know the value ```0x0e``` is going to be places into the upper half of the ```a``` register (```ah```). But the question is  
+asking for the value of the whole register (the higher half, AND the lower half). So now we have to traverse up the x86 instructions  to figure out the value of the lower half...
+
+Right above, on Line 168, we find what's being moved into ```al```. The line instruction says: ```mov al, 't'```. So now we know the  lower half is the equivalent of ```t```.
+
+Since the challenge has us give them the address in hex, we need to figure out what ```t``` is in hex. Looking it up on google we
+see:
+
+![t in hex](https://user-images.githubusercontent.com/41026969/50204810-0f37ab00-0334-11e9-8e13-142439bed7e1.png)
+
+So thus, the address of the lower half (```al```) is ```0x74```.
+
+Combining the higher half (```ah```) and the lower half (```al```) we get the answer:```ax``` = ```0x0e74```.
+
+NOTE: If you look up the hex values online, be sure to get the capitalization correctly as the hex value for ```T``` is different  
+than ```t```.
+
+### Question 5 (the last!!)
+
 
 
