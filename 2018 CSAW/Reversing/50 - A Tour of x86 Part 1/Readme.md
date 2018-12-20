@@ -1,4 +1,4 @@
-# A Tour of x86 Part 1
+# A Tour of x86 Part 1 Writeup
 
 The challenge reads:  
 ![tour of x86 part 1](https://user-images.githubusercontent.com/41026969/50127555-a7079d00-023f-11e9-922f-d5880475e4fe.png)
