@@ -1,7 +1,8 @@
 # CSAW 2018 Qualifiers Writeups
 
-POINT VALUE - NAME_OF_CHALLENGE
+Point_Value - Name_of_Challenge
 
-### Reverse Engineering Challenges
-
-### PWN Challenges
+### Reverse Engineering Challenges:  
+[50 - A Tour of x86 Part 1]()
+  
+### PWN Challenges:
