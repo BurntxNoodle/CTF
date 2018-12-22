@@ -12,4 +12,4 @@ Some helpful resources:
 
 ### still a work in progress
 
-\- BurntxNoodle (CS, UCF 2021)
+
