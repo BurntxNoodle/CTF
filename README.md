@@ -9,6 +9,7 @@ Some helpful resources:
 - [CTF101](https://ctf101.org/) (Provides some great reading on types of challenges encountered at CTFs)
 - [Archive of CSAW CTF Challenges](https://365.csaw.io/) (Past challenges)
 - [CTFtime](https://ctftime.org/) (Lists upcomming CTF competitions and some writeups)  
+- [Radare2 Cheat Sheet](https://github.com/radare/radare2/blob/master/doc/intro.md)
 
 ### still a work in progress
 
