@@ -15,4 +15,6 @@ So when we execute the program, we see there's a header that just says ```-Warm 
 
 Let's pop this executable into IDA pro and take a look into the ```main``` function.
 
+![warmup ida](https://user-images.githubusercontent.com/41026969/50433411-069c2300-08a6-11e9-8f56-ef023af9ce54.png)
 
+### in progress
