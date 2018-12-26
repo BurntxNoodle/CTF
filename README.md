@@ -1,6 +1,6 @@
 ## CTF
 I am currently learning how to CTF by doing some challenges, reading writeups,
-and writing my own writeups with what I learned.
+and writing my own writeups with what I learned. These writeups will be in-depth.
 
 I will be posting CTF writeups, summaries of challenges, guides, notes, etc.
 This repository will also contain wargames such as OverTheWire and pwnable.kr
