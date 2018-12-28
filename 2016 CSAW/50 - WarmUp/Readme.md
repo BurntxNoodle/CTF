@@ -69,7 +69,7 @@ Writing it backwards will look like:
 0x  0d  06  40  00  00  00  00  00 
 ```
 
-So now we cam write an exploit. So this code is a little different, the netcat address is different (everytime I create a new VPN session the address changes) and the address to the funciton I have to jump to is different than the one in IDA, nevertheless, it's the same process.
+So now we can write an exploit. So this code is a little different, the netcat address is different from when I first started writing this writeup (everytime I create a new VPN session the address changes) and the address to the funciton I have to jump to is different than the one in IDA, nevertheless, it's the same process.
 
 Here's my written exploit in python, it's pretty well commented out to help:
 ```python
@@ -95,9 +95,9 @@ payload = "Z" * 72 + "\xf6\x05\x40" + "\x00" * 5
 session.sendline(payload)
 session.interactive()
 ```
-When run, this is what it outputs:
+You can also see my exploit attached above. When run, this is what it outputs:
 ![my_exploit](https://user-images.githubusercontent.com/41026969/50530406-121c6380-0acb-11e9-9c3f-c1ef2b3a4425.png)
-###### note: the ```0x4005f6``` in the output shown was the address I had to jump to
+###### note: the ```0x4005f6``` in the output shown was the address I had to jump to. If you did the challenge live in 2016, you'd write the exploit to jump to the same address shown in IDA/the writeup.
 
 We got the flag!
 ```
