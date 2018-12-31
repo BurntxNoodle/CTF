@@ -1,3 +1,3 @@
 # pwnable.kr
 
-[pwnable.kr](pwnable.kr) is a wargame's website similar to OverTheWire except this website will focus more on pwn and exploits.
+[pwnable.kr](http://pwnable.kr/index.php) is a wargame's website similar to OverTheWire except this website will focus more on pwn and exploits.
