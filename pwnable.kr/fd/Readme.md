@@ -12,4 +12,5 @@ First we do a quick ```ls -la``` to check all the files in the system. Doing so 
 
 I like to play around with the executable before first inspecting it. Doing ```./fd``` reveals that we need to also pass in an argument, and trying out any integer/string will spit out the code ```learn about Linux file IO```...
 
-Let's look at the source code ![fd](https://user-images.githubusercontent.com/41026969/50622005-0c15f080-0ed8-11e9-93e2-4edf8681c6e9.PNG)
+Let's look at the source code:
+![fd](https://user-images.githubusercontent.com/41026969/50622005-0c15f080-0ed8-11e9-93e2-4edf8681c6e9.PNG)
