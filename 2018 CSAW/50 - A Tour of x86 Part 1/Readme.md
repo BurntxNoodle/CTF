@@ -1,4 +1,4 @@
-# A Tour of x86 Part 1 Writeup                                                                                              by 
+# A Tour of x86 Part 1 Writeup                                                                                              
 ### by [BurntxNoodle](https://github.com/BurntxNoodle)
 
 The challenge reads:  
