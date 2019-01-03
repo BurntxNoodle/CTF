@@ -34,7 +34,7 @@ We want the buffer to read into standard input since we want to pass in input, a
 
 We see that we can the decimal value equivalent that we'd have to pass into the program (there's no way the computer can tell we're passing a hex value, it'll just assume it's decimal), which is ```4660```.
 
-Doing ```./fd 4600``` we see the program is reading for a next input to read into the buffer. Looking at the code, we should type in ```LETMEWIN\n``` (we don't actually type the \n, that just means new line which gets inputted when we click enter after). 
+Doing ```./fd 4660``` we see the program is reading for a next input to read into the buffer. Looking at the code, we should type in ```LETMEWIN\n``` (we don't actually type the \n, that just means new line which gets inputted when we click enter after). 
 
 Doing so gets us the flag!!
 ```mommy! I think I know what a file descriptor is!!```
