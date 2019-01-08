@@ -31,6 +31,16 @@ Next, since we are given the source code we know that the function we want to lo
 
 ![bof](https://user-images.githubusercontent.com/41026969/50836056-44795c80-1326-11e9-99e0-4301b56a7cb6.png)
 
-So looking at the assembly
+First, we see at address ```0x5655564f``` we see that the assembly calling the ```gets()``` function (in gdb it doesn't say what the function is, but you can also open up IDA's disassembly and the instruction order will be the same except you'll see it calls the ```gets()``` function. Next we can see that the next instruction is a compare instruction (at address ```0x56555654```). It compares ```0xcafebabe``` to a value stored at ```ebp + 0x8```. 
+
+So theoretically, we can set a breakpoint at the ```cmpl``` function, thus it will pause the program after we input something from the ```gets()``` command. 
+
+So we can input a bunch of stuff and try to find how many characters it takes until we overwrite the address stored in ```ebp + 0x8``` as shown here:
+
+![bof](https://user-images.githubusercontent.com/41026969/50838215-7e992d00-132b-11e9-9bf7-a7b63b78617d.png)
+
+So we do ```b *[address]``` sets a break point at the ```address``` we set it to, in this case we set the breakpoint right before the program compares the addresses. Then we rerun the program by typing ```r```. 
+
+When we get asked for the input, to get the exact amount of bytes we need to give it, so we do each letter 4 at a time because this program is 32 bits, which is 4 byte addresses. 
 
 ### The second workaround
