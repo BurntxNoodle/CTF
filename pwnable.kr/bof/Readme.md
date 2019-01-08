@@ -57,5 +57,5 @@ session.sendline(payload)
 
 session.interactive()
 ```
-After we get overwrite the buffer, the ```session.interactive()``` allows us to get a shell. Doing a quick ```whoami``` check reveals we are bof and that we can now read the flag. ```cat flag``` gives us the flag: ```daddy, I just pwned a buFFer :)```
+After we overwrite the buffer, the ```session.interactive()``` allows us to get a shell. Doing a quick ```whoami``` check reveals we are bof and that we can now read the flag. ```cat flag``` gives us the flag: ```daddy, I just pwned a buFFer :)```
 
