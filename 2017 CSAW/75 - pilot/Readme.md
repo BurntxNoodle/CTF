@@ -12,3 +12,4 @@ First, I did a few checks:
 To quickly explain what I did for every command I did:
 ```chmod +x pilot``` gives pilot permission to execute (to run). If we didn't, if we tried to run it it'd say "Permission Denied." ```file pilot``` checks what kind of file pilot is. We learn that this is a 64 bit executable which means 8 byte addresses (which may be handy to us further down). ```checksec pilot``` checks the properties of an executable. We see that the program does not utilize a [stack canary](https://en.wikipedia.org/wiki/Stack_buffer_overflow#Stack_canaries) (which essential checks to see if the stack has been changed for buffer overflow possibility). We then just test the program.
 
+### in progress
