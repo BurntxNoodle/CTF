@@ -26,4 +26,6 @@ I looked at the disassembly x86 instructions next, specifically looked at the ma
 
 ![pilot](https://user-images.githubusercontent.com/41026969/51260034-60f74380-197b-11e9-8d90-c6202fc5fe3e.png)
 
+This is the part where the [function prologue](https://en.wikipedia.org/wiki/Function_prologue) takes place. We see that the function only allocates 32 bytes of space (I converted the hex value IDA says into decimal) into the stack, this is strange because even though the function prologue creates the stack with 32 bytes of memory, the buffer that we're inputting into is 64 bytes... This program is exploitable via buffer overflow.
+
 ### in progress
