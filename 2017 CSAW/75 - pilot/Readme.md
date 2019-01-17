@@ -28,4 +28,20 @@ I looked at the disassembly x86 instructions next, specifically looked at the ma
 
 This is the part where the [function prologue](https://en.wikipedia.org/wiki/Function_prologue) takes place. We see that the function only allocates 32 bytes of space (I converted the hex value IDA says into decimal) into the stack, this is strange because even though the function prologue creates the stack with 32 bytes of memory, the buffer that we're inputting into is 64 bytes... This program is exploitable via buffer overflow.
 
+### Exploiting
+To know better about the program and the stack, I used gdb with [peda](https://github.com/longld/peda) (python exploit development assistance). peda is an excellent tool as it allows us to observe the stack and registers after the program exits and it includes some fancy color text. So first I run the program in gdb peda by typing ```gdb pilot```. Then I type ```r``` to run the program. 
+
+So we need to find how many bytes we need to feed into the input before the return address is popped. To do this, when the program is run, I first input ```AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMMNNNNOOOOPPPP```. We input this because when we examine the stack registers later, we will be able to see which letters have overflowed through the base pointer into the stack pointer. Here's a picture of it below:
+
+![pilot](https://user-images.githubusercontent.com/41026969/51324731-7337b700-1a39-11e9-8471-eed6010d64cb.png)
+
+So if you didn't read the [function prologue](https://en.wikipedia.org/wiki/Function_prologue) page in the beginning of this writeup here's a quick summary:
+
+1) the return address is pushed onto the stack (so the function knows where to return after the function called is done)
+2) the base pointer is pushed onto the stack
+3) the stack pointer is made equal to the base pointer
+4) the stack pointer is then subtracted by a set amount (depends on some stuff). The space that's made between the stack pointer and the base pointer is used to memory. This is the space in memory that we will overwrite and exploit
+
+In the picture above the ```RBP``` stands for base pointer, and wee see it's: ```RBP: 0x4a4a4a4a49494949 ('IIIIJJJJ')```. Hence, it took from A (four times) to J (four times) to overwrite into the return address (total of 40 characters).
+
 ### in progress
