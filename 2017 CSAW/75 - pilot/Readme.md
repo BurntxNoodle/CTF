@@ -74,12 +74,10 @@ Walking through the code:
 - I basically open a session to the address
 - I start reading the adddress that's given from the program and store it into ```address``` then remove the new line character at the end
 - the ```shellcode``` variable is from the link from googling
-- to put together the payload, it's first the shellcode, then number of bytes times (40 minus length of shellcode) to make sure we don't over write too much. Then the last part is simply the address that was given from the program.
+- to put together the payload, it's first the shellcode, then number of bytes times (40 minus length of shellcode) to make sure we don't over write too much. Then the last part is simply the 8 byte address (padded with 2 extra bytes at the end because the original address given is 6 bytes total) that was given from the program.
 - we then just send the payload and set up interactive().
 
 ##### note: that nc address won't work (it's based on your CSAW365 account) and you need a vpn.
 
 Running the code will come up with the flag:
 ```flag{1nput_c00rd1nat3s_Strap_y0urse1v3s_1n_b0ys}```
-
-### in progress
