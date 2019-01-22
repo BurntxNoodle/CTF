@@ -79,5 +79,7 @@ Walking through the code:
 
 ##### note: that nc address won't work (it's based on your CSAW365 account) and you need a vpn.
 
+![pilot](https://user-images.githubusercontent.com/41026969/51542112-77444a00-1e28-11e9-96c8-dd56335d3f02.png)
+
 Running the code will come up with the flag:
 ```flag{1nput_c00rd1nat3s_Strap_y0urse1v3s_1n_b0ys}```
