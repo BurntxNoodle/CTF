@@ -26,5 +26,6 @@ Looking at the strings page, I see the failure message occur two separate times.
 
 Both these functions have a ```jnz``` command before the ```UDDER FAILURE!``` message. We can change this jump not zero command to jump zero so that we never get the failure message.
 
+### Patching the program
 
 ### coming soon - in progress
